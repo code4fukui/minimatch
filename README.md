@@ -10,15 +10,7 @@ objects.
 ## Usage
 
 ```js
-// hybrid module, load with require() or import
-import { minimatch } from 'minimatch'
-// or:
-const { minimatch } = require('minimatch')
-
-// default export also works
-import minimatch from 'minimatch'
-// or:
-const minimatch = require('minimatch')
+import minimatch from "https://code4fukui.github.io/minimatch/minimatch.js";
 
 minimatch('bar.foo', '*.foo') // true!
 minimatch('bar.foo', '*.bar') // false!
@@ -82,8 +74,9 @@ is set in the options.
 Create a minimatch object by instantiating the `minimatch.Minimatch` class.
 
 ```javascript
-var Minimatch = require('minimatch').Minimatch
-var mm = new Minimatch(pattern, options)
+import minimatch from "https://code4fukui.github.io/minimatch/minimatch.js";
+const Minimatch = minimatch.Minimatch;
+const mm = new Minimatch(pattern, options);
 ```
 
 ### Properties
@@ -295,3 +288,9 @@ matcher, which does not do anything special for slashes. This library is
 designed to be used in glob searching and file walkers, and so it does do
 special things with `/`. Thus, `foo*` will not match `foo/bar` in this
 library, even though it would in `fnmatch(3)`.
+
+## to build
+
+```sh
+deno bundle src/index.ts minimatch.js
+```

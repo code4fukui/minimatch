@@ -1,3 +1,5 @@
+import process from "https://code4fukui.github.io/process/process.js";
+
 export interface MinimatchOptions {
   nobrace?: boolean
   nocomment?: boolean
@@ -50,7 +52,7 @@ minimatch.sep = sep
 
 export const GLOBSTAR = Symbol('globstar **')
 minimatch.GLOBSTAR = GLOBSTAR
-import expand from 'brace-expansion'
+import expand from "https://code4fukui.github.io/brace-expansion/index.js";
 
 const plTypes = {
   '!': { open: '(?:(?!(?:', close: '))[^/]*?)' },
